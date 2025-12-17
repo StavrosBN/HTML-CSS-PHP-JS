@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Καλωσόρισμα Φοιτητή</title>
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+
+</head>
+
+<body>
+    <?php
+    session_start();
+    if (isset($_SESSION['role']) && $_SESSION['role'] == 'student' && isset($_SESSION['user_id'])) {
+        $name = $_SESSION['name'];
+        $surname = $_SESSION['surname'];
+        $id = $_SESSION['user_id']; 
+        echo "<h1>Καλησπέρα, $name $surname </h1>";
+    } else {
+        // Αν κάποιος άλλος προσπαθήσει να δει τη σελίδα
+        header("Location: ../login.php");
+        exit;
+    }
+    ?>
+<hr>
+<h2>Οι Επιλογές σου:</h2>
+    <a href="student.php">Αρχική Σελίδα</a>
+    <a href="student_thesis.php">Προβολή Διπλωματικής</a>
+    <a href="student_edit.php">Επεξεργασία Στοιχείων</a>
+    <a href="exam_student.php">Οργάνωση Εξέτασης</a>
+    <hr>
+
+</body>
+</html>

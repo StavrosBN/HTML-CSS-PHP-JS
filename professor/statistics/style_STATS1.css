@@ -1,0 +1,125 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+nav button {
+    background-color: #6a11cb;
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #2575fc;
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav button:active {
+    transform: scale(1.05);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Chart Containers */
+.charts-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Allows charts to wrap on smaller screens */
+}
+
+.chart-wrapper {
+    width: 30%;
+    height: 400px; /* Adjust the height as needed */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .charts-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .chart-wrapper {
+        width: 100%;
+        height: 300px; /* Adjust the height on smaller screens */
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav button {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+
+.logout-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    position: absolute; 
+    top: 20px; 
+    right: 20px;
+    z-index: 1000; 
+}
+
+.logout-button:hover {
+    background-color: #ff1a1a;
+}
